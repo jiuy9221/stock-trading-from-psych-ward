@@ -27,17 +27,14 @@ def setup_git_config():
     print("✅ Git配置已完成")
 
 def clone_or_pull_repo():
-    """克隆或更新Git仓库"""
-    repo_name = GIT_REPO.split('/')[-1].replace('.git', '')
-    
-    if os.path.exists(repo_name):
-        subprocess.run(['git', 'pull'], cwd=repo_name, check=True, capture_output=True)
+    """返回当前仓库路径"""
+    repo_path = os.getcwd()
+    try:
+        subprocess.run(['git', 'pull'], cwd=repo_path, check=True, capture_output=True)
         print("✅ 已拉取最新代码")
-    else:
-        subprocess.run(['git', 'clone', GIT_REPO], check=True, capture_output=True)
-        print("✅ 已克隆仓库")
-    
-    return repo_name
+    except Exception as e:
+        print("ℹ️  使用当前工作区作为仓库")
+    return repo_path
 
 def read_plan(repo_path, filepath):
     """读取开发计划文档"""
