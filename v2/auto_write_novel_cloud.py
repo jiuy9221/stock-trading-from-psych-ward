@@ -11,9 +11,9 @@ import subprocess
 from datetime import datetime
 
 # 配置
-GIT_REPO = "https://gitee.com/September-S9/stock-trading-from-psych-ward.git"
-GIT_USER_NAME = "September"
-GIT_USER_EMAIL = "9608966+september-s9@user.noreply.gitee.com"
+GIT_REPO = "https://github.com/jiuy9221/stock-trading-from-psych-ward.git"
+GIT_USER_NAME = "jiuy9221"
+GIT_USER_EMAIL = "jiuy9221@users.noreply.github.com"
 NOVEL_FILE = "v2/我在精神病院学炒股_第二版.md"
 PLAN_FILE = "v2/第二版小说创作计划文档.md"
 CHAPTERS_PER_RUN = 10
